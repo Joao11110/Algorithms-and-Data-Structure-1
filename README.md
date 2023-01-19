@@ -1,3 +1,4 @@
 # Data-Structure
 
-## Some algorythms that I've made
+## Some algorithms that I've made.
+
