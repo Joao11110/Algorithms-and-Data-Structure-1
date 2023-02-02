@@ -2,24 +2,28 @@
 #include<stdlib.h>
 
 int main(){
+    
     int qnt_frutas;
     printf("Digite a quantidade de frutas: ");
     scanf("%d", &qnt_frutas);
 
     char** frutas = (char**) malloc(qnt_frutas*sizeof(char*));
-    if(frutas == NULL){
+    if(frutas == NULL)
+    {
         printf("Erro de alocação.");
         exit(1);
     }   
 
     int linha;
-    for(linha = 0; linha < qnt_frutas; linha++){
+    for(linha = 0; linha < qnt_frutas; linha++)
+    {
         frutas[linha] = (char*) malloc(50*sizeof(char));
     }
 
     float * preco = (float*) malloc(qnt_frutas*sizeof(int));
 
-    if(preco == NULL){
+    if(preco == NULL)
+    {
         printf("Erro de alocação.");
         exit(1);
     }
@@ -36,8 +40,7 @@ int main(){
         free(frutas[linha]);
     }
     
+    free(qnt_frutas);
     
-
-
-    return;
+    return 0;
 }
