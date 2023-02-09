@@ -80,6 +80,12 @@ int main()
     printf("Digite a quantidade de funcionarios: ");
     scanf("%d", &qnt_funcionarios);
     Funcionario * F1 = (Funcionario*) malloc(qnt_funcionarios*sizeof(Funcionario));
+    
+    if(funcionario == NULL) {
+        printf("Erro!");
+        exit(1);
+    }
+    
     for (i = 0; i < qnt_funcionarios; i++)
     {
         Preenche(F1, qnt_funcionarios);
