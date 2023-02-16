@@ -1,4 +1,4 @@
 # Data-Structure
 
-## Some algorithms that I've made.
+## Algorithms from the Data Structure Classes that I've made.
 
