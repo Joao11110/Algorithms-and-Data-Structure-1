@@ -24,7 +24,7 @@ int main()
     float largura, *area, *perimetro ,a , p;
     printf("Digite a largura do hexagono: ");
     scanf("%f", &largura); 
-    peimetro = &p, area = &a;
+    perimetro = &p, area = &a;
     calcula_hexagono(largura,area,perimetro);
     printf("\nArea: %.1f \nPerimetro: %.1f\n", a, p);
     return 0;
