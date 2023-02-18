@@ -1,8 +1,9 @@
+// Incluindo bibliotecas
 #include<stdio.h>
 #include<stdlib.h>
 
-int main(){
-
+int main()
+{
     // Declarações de variáveis
     int tamanho = 10;
     int *vetor = (int*)malloc(tamanho*sizeof(int));
@@ -16,6 +17,5 @@ int main(){
     
    // Liberação de memória 
    free(vetor);
-
    return 0;
 }
