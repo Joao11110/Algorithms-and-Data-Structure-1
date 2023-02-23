@@ -1,12 +1,13 @@
 #include<stdio.h>
 
+// Enem gnenero representado os gêneros
 typedef enum genero
 {
     MASCULINO,
     FEMININO,
-    NEUTRO,
 }Genero;
 
+// Struct pessoas referente aos dados das pessoas
 typedef struct pessoa
 {
     char nome[60];
@@ -14,6 +15,7 @@ typedef struct pessoa
     Genero genero;
 }Pessoa;
 
+// Implementação os dados das pessoas são lidos e dependendo do gênero o usuário entra no if ou no else if correspondente ao seu gênero
 int main()
 {
     Pessoa pessoa;
@@ -31,8 +33,5 @@ int main()
     {
         printf("\nDados\nNome: %s\nIdade: %d\nGenero: Feminino\n", pessoa.nome, pessoa.idade);
     }
-    else if (pessoa.genero == 2)
-    {
-        printf("\nDados\nNome: %s\nIdade: %d\nGenero: Neutro\n", pessoa.nome, pessoa.idade);
-    }
+    return 0;
 }
