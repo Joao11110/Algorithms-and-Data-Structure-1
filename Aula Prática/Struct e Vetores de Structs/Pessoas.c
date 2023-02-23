@@ -9,6 +9,7 @@ typedef struct pessoa
     int idade;
 }Pessoa;
 
+// Função que preenche os dados das pessoas
 void Preenche(Pessoa * P, int qnt){
     int i;
     for (i = 0; i < qnt; i++)
@@ -22,6 +23,7 @@ void Preenche(Pessoa * P, int qnt){
     }   
 }
 
+// Função que imprime os dados das pessoas
 void Imprime(Pessoa * I, int qnt){
     int i;
     for (i = 0; i < qnt; i++)
@@ -33,6 +35,7 @@ void Imprime(Pessoa * I, int qnt){
     }   
 }
 
+// Função que muda a idade das pessoas
 void Idade(Pessoa * P, int qnt){
     int i;
     int NovaIdade;
@@ -56,6 +59,7 @@ void Idade(Pessoa * P, int qnt){
     }
 }
 
+// Função que compara a idade das pessoas
 void MenorMaior(Pessoa * M, int qnt){
     int i;
     int maior = 0;
@@ -76,6 +80,7 @@ void MenorMaior(Pessoa * M, int qnt){
     printf("\nPessoa com menor idade:\nIdade: %d\n", menor);
 }
 
+// Implementação das funções
 int main()
 {
     int qntPessoas;
@@ -86,6 +91,8 @@ int main()
     Imprime(pessoa, qntPessoas);
     Idade(pessoa, qntPessoas);
     MenorMaior(pessoa, qntPessoas);
+    
+    // Liberando espaço de alocamento da struct pessoa
     free(pessoa);
     return 0;
 }
