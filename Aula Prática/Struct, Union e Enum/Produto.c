@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+// Union tipo representado os tipos de produtos
 typedef union tipo
 {
     int ALIMENTO;
@@ -7,6 +8,8 @@ typedef union tipo
     int ELETRONICO;
 }Tipo;
 
+
+// Struct porduto representado os dados dos produtos
 typedef struct produto
 {
     char nome[60];
@@ -14,6 +17,8 @@ typedef struct produto
     Tipo tipo;
 }Produdo;
 
+
+// Implementação os dados dos produtos são lidos e dependendo do seu tipo eles entram em if ou else if respectivo
 int main()
 {
     Produdo produto;
