@@ -10,6 +10,7 @@ typedef struct funcionario
     char cargo[30];
 }Funcionario;
 
+// Função que preenche os dados dos funcionários
 void Preenche(Funcionario * F1, int qnt_funcionarios)
 {
     int i = 0;
@@ -25,6 +26,7 @@ void Preenche(Funcionario * F1, int qnt_funcionarios)
     i+1; 
 }
 
+// Função que imprime os dados dos funcionários
 void Imprime(Funcionario * F1, int qnt_funcionarios)
 {
     int i = 0;
@@ -36,6 +38,7 @@ void Imprime(Funcionario * F1, int qnt_funcionarios)
     i+1;
 }
 
+// Função que altera o salário dos funcionários
 void AlteraSalario(Funcionario * F1, int qnt_funcionarios)
 {
     int i;
@@ -58,6 +61,7 @@ void AlteraSalario(Funcionario * F1, int qnt_funcionarios)
     } 
 }
 
+// Função que compara o salário dos funcionários
 void ComparaSalario(Funcionario * F1, int qnt_funcionarios)
 {
     int i;
@@ -74,11 +78,15 @@ void ComparaSalario(Funcionario * F1, int qnt_funcionarios)
     }
 }
 
+// Implmentação das funções no int main
 int main()
 {
+    
     int qnt_funcionarios, i;
     printf("Digite a quantidade de funcionarios: ");
     scanf("%d", &qnt_funcionarios);
+    
+    // Alocação dinâmica da struct Funcionario = F1
     Funcionario * F1 = (Funcionario*) malloc(qnt_funcionarios*sizeof(Funcionario));
     
     if(funcionario == NULL) {
@@ -86,6 +94,7 @@ int main()
         exit(1);
     }
     
+    // Laço de repetição de acordo com a quntidade de funcionários
     for (i = 0; i < qnt_funcionarios; i++)
     {
         Preenche(F1, qnt_funcionarios);
@@ -94,11 +103,7 @@ int main()
         ComparaSalario(F1, qnt_funcionarios);
     }
 
-    for (i = 0; i < qnt_funcionarios; i++)
-    {
-        free(qnt_funcionarios);
-    }
-
+    // Liberando o espaço de alocamento da struct F1
     free(F1);
 
     return 0;
