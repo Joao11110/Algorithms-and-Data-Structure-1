@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+// Enum mes representando os meses do ano
 typedef enum mes
 {
     JANEIRO, 
@@ -16,6 +17,7 @@ typedef enum mes
     DEZEMBRO, 
 }Mes;
 
+// Struct data representando os dias do ano
 typedef struct data
 {
     int dia;
@@ -23,6 +25,7 @@ typedef struct data
     int ano;
 }Data;
 
+// Implementação: o usuário digita o dia o mês e o ano e os dados aparecem no printf, sendo o mês é escolhido dentro de switch case
 int main()
 {
     Data data;
