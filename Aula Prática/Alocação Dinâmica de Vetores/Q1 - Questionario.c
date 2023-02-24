@@ -51,7 +51,6 @@ int main()
         {
             soma_F++;
         }
-
         if((sexo[j] == 'M') && (opcao[j]) == 'N')
         {
             soma_M++;
@@ -67,7 +66,7 @@ int main()
     printf("%d%% - Publico feminino que gostou do produto: \n", soma_F);
     printf("%d%% - Publico masculino que nao gostou do produto: \n", soma_M);
 
-    // Liberando meória das variáveis alocadas
+    // Liberando memória das variáveis alocadas
     free(sexo);
     free(opcao);
     return 0;
