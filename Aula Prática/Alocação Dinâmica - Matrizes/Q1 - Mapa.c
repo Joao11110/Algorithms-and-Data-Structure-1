@@ -1,71 +1,122 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-// Função que cria uma matriz tipo int
-int ** CriaMatriz (int linha, int coluna)
-{
-    int N_linhas;
-    int ** matriz = (int**) malloc(linha*sizeof(int*));
 
-    if(matriz == NULL)
-    {
-        printf("Erro!");
-        exit(1);
-    }
-
-    for (N_linhas = 0; N_linhas < linha; N_linhas++)
-    {
-        matriz[linha] = (int*) malloc(coluna*sizeof(int));
-        if(matriz == NULL)
-        {
-        printf("Erro!");
-        exit(1);
-        }
-    }
-
-    return matriz;
-}
-
-// Finção principal
 int main()
 {
+    // Variáveis do tipo inteiro para for, linhas, colunas e a costa
     int i, j;
-    int M; // linhas
-    int N; // colunas
+    int m; // linhas
+    int n; // colunas
+    int costa = 0;
 
+    // Usuário inserindo os valores da matriz
     printf("Digite numero de linha da matriz: ");
-    scanf("%d", &M);
+    scanf("%d", &m);
     printf("Digite numero de colunas da matriz: ");
-    scanf("%d", &N);
-
-    char ** matriz = CriaMatriz(M, N);
-
-    printf("Digite ponto ""."" para o mar e hashtag ""#"" para a terra: ");
-    for ( i = 0; i < M; i++)
+    scanf("%d", &n);
+    
+    // Alocação dinâmica da matriz mapa
+    char **mapa = (char**) malloc(m*sizeof(char*));
+    if (mapa == NULL)
     {
-        for (j = 0; j < N; j++)
+        printf("\nErro de alocacao!\n");
+        exit(1);
+    }
+    for (i = 0; i < m;i++)
+    {
+        mapa[i] = (char*) malloc(n*sizeof(char));
+        if ((mapa[i])==NULL)
         {
-            scanf("%s", matriz[i][j]);
+            printf("\nErro de alocacao!\n");
         }  
     }
 
-    printf("\nMatriz:\n");
-
-    for ( i = 0; i < M; i++)
+    // Usuário digitando o mapa
+    printf("\nDigite um mapa utilizando '.' e '#' de acordo com a legenda abaixo:\n\nLegenda:\n\n'.' = agua\n'#' = terra\n");
+    for (i = 0; i < m;i++)
     {
-        for (j = 0; j < N; j++)
+        printf("\nEscreva a %d linha com %d caracteres:\n", i+1, n);
+        scanf(" %[^\n]", mapa[i]);
+    }
+
+    //Imprimindo o mapa que o usuário digitou
+    printf("\nMapa digitado:\n\n");
+    for (i = 0; i < m; i++)
+    {
+        printf("%s",mapa[i]);
+        printf("\n");
+    }
+
+    // For com if ou else if para cada possibilidade de existir uma costa no mapa
+    for (i = 0; i < m; i++)
+    {
+        for (j = 0;j < n;j++)
         {
-             printf("%s", matriz[i][j]);
-        }  
+            if ((mapa[i][j]) == '#')
+            {
+                if (i == 0)
+                {
+                    if (j == 0 && (mapa[i][j+1]) == '.')
+                    {
+                        costa++;
+                    }
+                    else if ( j == n-1 && (mapa[i][j-1]) == '.')
+                    {
+                        costa++;
+                    }
+                    else if ((mapa[i][j-1]) == '.' || (mapa[i][j+1]) == '.' || (mapa[i+1][j]) == '.')
+                    {
+                        costa++;
+                    }
+                }
+
+                else if (i == m-1)
+                {
+                    if (j == 0 && (mapa[i][j+1]) == '.')
+                    {
+                        costa++;
+                    }
+                    else if ( j == n-1 && (mapa[i][j-1]) == '.')
+                    {
+                        costa++;
+                    }
+                    else if ((mapa[i][j-1]) == '.' || (mapa[i][j+1]) == '.' || (mapa[i-1][j]) == '.')
+                    {
+                        costa++;
+                    }
+                }
+
+                else if (j == 0)
+                {
+                    if((mapa[i][j+1]) == '.' || (mapa[i-1][j]) == '.' || (mapa[i+1][j]) == '.')
+                    {
+                        costa ++;
+                    }
+                }
+
+                else if (j == n-1)
+                {
+                    if((mapa[i][j-1]) == '.' || (mapa[i-1][j]) == '.' || (mapa[i+1][j]) == '.')
+                    {
+                        costa ++;
+                    }
+                }
+
+                else if ((mapa[i][j-1]) == '.' || (mapa[i][j+1]) == '.' || (mapa[i-1][j]) == '.' || (mapa[i+1][j]) == '.')
+                {
+                        costa++;
+                }
+            }
+        }              
     }
 
-    for (i = 0; i < M; i++)
-    {
-        free(matriz[i]);
-    }
+    printf("\nO tamanho da costa e igual a: %d", costa);
 
-    free(matriz);
-    
-    
+    for(i = 0; i < m;i++){
+        free(mapa[i]);
+    }
+    free(mapa);
     return 0;
 }
