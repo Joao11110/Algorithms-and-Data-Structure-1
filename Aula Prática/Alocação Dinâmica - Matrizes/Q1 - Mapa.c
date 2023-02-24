@@ -112,8 +112,10 @@ int main()
         }              
     }
 
+    // Imprimindo o resultado da número de costas
     printf("\nO tamanho da costa e igual a: %d", costa);
 
+    // Liberando a memória da matriz mapa
     for(i = 0; i < m;i++){
         free(mapa[i]);
     }
