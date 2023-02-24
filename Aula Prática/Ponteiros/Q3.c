@@ -24,6 +24,10 @@ Observe que, se int *p é uma variável do tipo ponteiro para inteiro, então in
 variável do tipo ponteiro para ponteiro de inteiro, isto é, uma varável que poderá armazenar o
 endereço de um ponteiro do tipo int.
 
+Verifiquei as variáveis as quais os ponteiros estavam
+relacionados e assim segui fazendo as contas e atualizando os
+valores até que se chegasse ao return 0.
+
 A saída será: a = 11, b = 20, c = 10, d = 30.
 
 */
