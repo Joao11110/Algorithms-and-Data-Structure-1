@@ -13,5 +13,6 @@ int main(){
     (*p) += x;  // x = 3, y = 4, *p = 4
     return 0;
 }
-
-// Valor final: x = 3, y = 4, *p = 4
+/* Apenas verifiquei para qual variável o ponteiro estava relacionado e
+assim segui fazendo as contas e atualizando os valores até que se chegasse ao return 0.
+Valor final: x = 3, y = 4, *p = 4 */
