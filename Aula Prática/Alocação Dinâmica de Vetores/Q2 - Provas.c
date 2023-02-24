@@ -23,6 +23,20 @@ int main()
     char *gabarito = (char*)malloc(num_quest * sizeof(char));
     char *respostas = (char*)malloc(num_quest * sizeof(char));
     int nota[10];
+    
+    // Verificação de a memória não foi feita
+    if(gabarito == NULL)
+    {
+        printf("\nErro de alocação de memória.");
+        exit(1);
+    }
+    
+    // Verificação de a memória não foi feita
+    if(respostas == NULL)
+    {
+        printf("\nErro de alocação de memória.");
+        exit(1);
+    }
 
     // Inserindo o gabarito da prova
     for (i = 0; i < num_quest; i++)
