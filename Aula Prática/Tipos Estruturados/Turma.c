@@ -90,8 +90,6 @@ int main()
                 break;
 
             case '6':
-                
-
                 // Libera a memória alocada e encerra o programa
                 for (i = 0; i < MAX_TURMAS; i++)
                 {
@@ -108,6 +106,7 @@ int main()
     return 0;
 }
 
+// Função cria_turma e cria uma turma e atribui NULL no seu vetor
 Turma* cria_turma(char id) 
 {
     int i;
@@ -122,6 +121,7 @@ Turma* cria_turma(char id)
     return turma;
 }
 
+// Função matricula_aluno matricula o aluno em uma turma já criada
 void matricula_aluno(Turma* turma, int mat, char* nome) 
 {
     int i;
@@ -143,6 +143,7 @@ void matricula_aluno(Turma* turma, int mat, char* nome)
     turma->vagas--; 
 }
 
+// Função lanca_notas lança as 3 notas para cada aluno da turma
 void lanca_notas(Turma* turma)
 {
     int i;
@@ -161,6 +162,7 @@ void lanca_notas(Turma* turma)
     }
 }
 
+// Função imprime_alunos imprime os dados dos alunos de uma turma
 void imprime_alunos(Turma* turma) {
     for (int i = 0; i < MAX_VAGAS - turma->vagas; i++)
     {
@@ -172,6 +174,7 @@ void imprime_alunos(Turma* turma) {
     }
 }
 
+// Função imprime_turmas imprime as turmas com seus respectivos alunos dessa turma
 void imprime_turmas(Turma** turmas, int n) {
     for (int i = 0; i < n; i++)
     {
@@ -185,6 +188,7 @@ void imprime_turmas(Turma** turmas, int n) {
     }
 }
 
+// Função procura_turma imprime as turmas que foram criadas de acordo com o numero n = MAX_TURMAS
 Turma* procura_turma(Turma ** turma, int n, char id){
     int i;
     n = MAX_TURMAS;
