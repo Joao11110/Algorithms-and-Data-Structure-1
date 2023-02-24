@@ -40,6 +40,7 @@ int main()
     if (turma == NULL)
     {
         printf("Erro de alocação!");
+        exit(1);
     }
     
     // Do while com um switch para cada opção escolhida pelo usuário
