@@ -9,7 +9,13 @@ A = 2l²√3/2 com P = 6l
 Obs: Para os cálculos, utilize as funções sqrt e pow do módulo math da biblioteca
 padrão de C. Em seguida, crie a função principal do programa e utilize a função
 calcula_hexagono para calcular a área e o perímetro de um hexágono de lado l
-informado pelo usuário.*/
+informado pelo usuário.
+
+Criei uma função para calcular a área e o perímetro do hexágono,
+pedi para o usuário digitar a largura do hexágono e assim que esse fosse preenchido
+a função retornará os valores da área e do perímetro do hexágono.
+
+*/
 
 // Incluindo bibliotecas
 #include<stdio.h>
