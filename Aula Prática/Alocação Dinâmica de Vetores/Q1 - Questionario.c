@@ -30,6 +30,19 @@ int main()
     // Alocação de memória das variáveis
     char *sexo = (char*)malloc(num_pessoas * sizeof(char));
     char *opcao = (char*)malloc(num_pessoas * sizeof(char));
+    
+    // Verificação de a memória não foi feita
+    if(sexo == NULL)
+    {
+        printf("\nErro de alocação de memória.");
+        exit(1);
+    }
+    
+    if(opcao == NULL)
+    {
+        printf("\nErro de alocação de memória.");
+        exit(1);
+    }
 
     // Questionário
     printf("Questionario\n");
